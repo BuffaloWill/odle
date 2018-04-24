@@ -1,9 +1,9 @@
-# odle (_/oh·dul/_)
+# odle (/_oh·dul_/)
 
 odle is a Ruby gem and binary that takes various XML data from security tools and outputs their JSON equivalent. The goal is to be (1) simple, (2) fast, and (3) work on many platforms with only one dependency -- nokogiri. 
 
 # Installation
-Odle has been tested on different versions of Ruby (link here) so the one available in your package manager will probably work. Anything Ruby 2+ is a safe bet. 
+odle has been tested on different versions of Ruby so the one available in your package manager will probably work. Anything Ruby 2+ is a safe bet. 
 
 ```
 # make sure Ruby is installed first, then
@@ -38,7 +38,6 @@ Odle takes in data (mostly XML) and outputs a JSON hash coordinated by hosts. Ea
 | Metasploit XML Export     | v5 			|
 | BurpSuite XML Export      | Unknown 		|
 | Nessus        			| v2 			|
-| Masscan	      			| Unknown		|
 
 If you want odle to support SECURITY_TOOL_X, we probably do too. Here is how you can help:
 
