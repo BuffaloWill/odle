@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'odle'
+
+# data flags are required
+flags = ARGV.shift
+
+unless flags 
+	puts "[!] A data type is required e.g.\n odle --burp \n\n Available types:"#+list_types()
+	exit(0)
+end
+
+# flags come in the form --type or --type,arg1=val1,arg2=val2
+if flags =~ /,/
+	# complicated flags, not implemented yet
+	all = flags.gsub("--","").split(",")
+
+	type = all[0]
+else
+	type = flags.gsub("--","")
+end
+
+if type.downcase == "burp"
+	puts Burp.new().parse(ARGF.read,"0")
+elsif type.downcase == "nessus"
+	puts Nessus.new().parse(ARGF.read,"0")
+elsif type.downcase == "msf"
+	puts Metasploit.new().parse(ARGF.read,"0")
+else
+	puts "[!] Unknown data type \n\n Available types:"#+list_types()
+end
