@@ -1,3 +1,5 @@
+# odle (_/oh·dul/_)
+
 odle is a Ruby gem and binary that takes various XML data from security tools and outputs their JSON equivalent. The goal is to be (1) simple, (2) fast, and (3) work on many platforms with only one dependency -- nokogiri. 
 
 # Installation
@@ -27,7 +29,7 @@ json_d = Metasploit.new().parse("./msf_export.xml")
 
 # Data In, Data Out
 
-Odle takes in an XML file and outputs a JSON hash coordinated by hosts. Each host in the hash contains an array of findings (i.e. vulnerabilities) from the data. See the wiki page for more details. 
+Odle takes in data (mostly XML) and outputs a JSON hash coordinated by hosts. Each host in the hash contains an array of findings (i.e. vulnerabilities) from the data. See the wiki page for more details. 
 
 # Supported Inputs
 
@@ -40,5 +42,10 @@ Odle takes in an XML file and outputs a JSON hash coordinated by hosts. Each hos
 
 If you want odle to support SECURITY_TOOL_X, we probably do too. Here is how you can help:
 
-- Legally scan some public assets, export the data as XML, create an issue, and attach the XML file. Your issue must include a data sample from the tool or we will close the issue. If you would like to encrypt the data before upload, directions are here (link).
+- Legally scan some public assets
+- Export the data as XML
+- create an issue
+- Attach the results exported as XML (or a file format we can handle)
+- Your issue must include a data sample from the tool or we will close the issue. If you would like to encrypt the data before upload, directions are here (link).
+- Expected conversion results will also really help us (Total Hosts: N, Total Findings: M, etc.)
 
