@@ -10,13 +10,16 @@ class Metasploit
     doc.css('//hosts/host').each do |hostnode|
       findings = Array.new
 
-      host = hostnode.css("/name").text.to_s
+      host = hostnode.css('/name').text.to_s
 
-      hostnode.css("/vulns/vuln").each do |issue|
+      hostnode.css('/vulns/vuln').each do |issue|
         # create a temporary finding object
         finding = Finding.new()
         finding.title = issue.css('name').text.to_s()
         finding.overview = issue.css('info').text.to_s()
+        finding.risk = 0 # this needs to be fixed
+        finding.remediation = "" 
+        finding.id = issue.css('id').text.to_s()
         findings << finding.to_hash
       end
       vulns[host] = findings

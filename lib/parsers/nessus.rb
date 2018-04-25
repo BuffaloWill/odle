@@ -10,13 +10,12 @@ class Nessus
     doc = Nokogiri::XML(xml)
 
     doc.css("//ReportHost").each do |hostnode|
-  
-      if (hostnode["name"] != nil)
-        host = hostnode["name"]
-      end
-    
+      host = hostnode['name'] unless hostnode['name'].nil?
+      host = " " unless host
+      vulns[host] = []
+      
       hostnode.css("ReportItem").each do |itemnode|
-    
+  
         if (itemnode["port"].to_s != "0" && itemnode["severity"] >= threshold)
 
           # create a temporary finding object
@@ -36,7 +35,7 @@ class Nessus
           finding.references = itemnode.css("see_also").to_s
           finding.id = itemnode['pluginID'].to_s()
 
-          vulns[hostname] << finding.to_hash
+          vulns[host] << finding.to_hash
           items << itemnode['pluginID'].to_s()
         end
       end
