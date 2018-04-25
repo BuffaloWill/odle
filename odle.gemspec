@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'odle'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2018-04-24'
   s.summary     = 'odle'
   s.description = 'An easy to use security data parsing tool. Takes in data from different tools and outputs standardized JSON.'

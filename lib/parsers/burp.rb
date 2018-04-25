@@ -1,10 +1,6 @@
 require 'json'
 
   class Burp
-
-    def parse(xml)
-      parse(xml,0)
-    end
     
     def parse(xml,threshold)
     vulns = Hash.new
@@ -55,4 +51,5 @@ require 'json'
     #vulns["findings"] = uniq_findings(findings)
     return vulns.to_json
     end
+
   end

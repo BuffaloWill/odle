@@ -2,10 +2,6 @@ require 'json'
 
 class Nessus
 
-  def parse(xml)
-    parse(xml,0)
-  end
-
   def parse(xml,threshold)
     vulns = Hash.new
     findings = Array.new

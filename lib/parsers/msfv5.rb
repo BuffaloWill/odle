@@ -2,10 +2,6 @@ require 'json'
 
 class Metasploit
 
-  def parse(xml)
-    parse(xml,0)
-  end
-
   def parse(xml,threshold)
     vulns = Hash.new
     vulns["findings"] = []
