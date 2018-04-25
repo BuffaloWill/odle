@@ -2,6 +2,10 @@ require 'json'
 
 class Nessus
 
+  def parse(xml)
+    parse(xml,0)
+  end
+
   def parse(xml,threshold)
     vulns = Hash.new
     findings = Array.new
@@ -10,10 +14,13 @@ class Nessus
     doc = Nokogiri::XML(xml)
 
     doc.css("//ReportHost").each do |hostnode|
+  
       if (hostnode["name"] != nil)
         host = hostnode["name"]
       end
+    
       hostnode.css("ReportItem").each do |itemnode|
+    
         if (itemnode["port"].to_s != "0" && itemnode["severity"] >= threshold)
 
           # create a temporary finding object
@@ -38,7 +45,7 @@ class Nessus
         end
       end
 
-#      vulns[host] = findings
+  #    vulns[host] = findings
       items = []
     end
 
