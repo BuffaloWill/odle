@@ -38,13 +38,3 @@ Odle takes in data (mostly XML) and outputs a JSON hash coordinated by hosts. Ea
 | Metasploit XML Export     | v5 			|
 | BurpSuite XML Export      | Unknown 		|
 | Nessus        			| v2 			|
-
-If you want odle to support SECURITY_TOOL_X, we probably do too. Here is how you can help:
-
-- Legally scan some public assets
-- Export the data as XML
-- create an issue
-- Attach the results exported as XML (or a file format we can handle)
-- Your issue must include a data sample from the tool or we will close the issue. If you would like to encrypt the data before upload, directions are here (link).
-- Expected conversion results will also really help us (Total Hosts: N, Total Findings: M, etc.)
-
