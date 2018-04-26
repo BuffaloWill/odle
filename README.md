@@ -26,7 +26,7 @@ cat burp.xml | odle --burp
 ```
 require 'odle'
 
-json_d = Metasploit.new().parse("./msf_export.xml")
+json_d = Metasploit.new().parse("./msf_export.xml","0")
 ```
 
 # Data In, Data Out
