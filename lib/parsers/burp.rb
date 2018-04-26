@@ -34,7 +34,7 @@ require 'json'
         host = issue.css('host').text
         ip = issue.css('host').attr('ip')
         id = issue.css('type').text
-        hostname = "#{ip} #{host}"
+        hostname = "#{host}"
 
         finding.affected_hosts = "#{host} (#{ip})"
 
