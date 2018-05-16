@@ -40,3 +40,4 @@ Odle takes in data (mostly XML) and outputs a JSON hash coordinated by hosts. Ea
 | Metasploit XML Export     | v5 			|
 | BurpSuite XML Export      | Unknown 		|
 | Nessus        			| v2 			|
+| Nmap 	        			| Unknown		|

@@ -26,6 +26,8 @@ elsif type.downcase == "nessus"
 	puts Nessus.new().parse(ARGF.read,"0")
 elsif type.downcase == "msf"
 	puts Metasploit.new().parse(ARGF.read,"0")
+elsif type.downcase == "nmap"
+	puts Nmap.new().parse(ARGF.read,"0")
 else
 	puts "[!] Unknown data type \n\n Available types:"#+list_types()
 end
