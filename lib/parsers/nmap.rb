@@ -46,6 +46,7 @@ class Nmap
         finding = Finding.new()
         finding.affected_hosts = affected_hosts
 
+        # if a script was run, grab the results
         if port.css("/script").size > 0 
           finding.title = "Script Scan:"+port.css("/script").attr("id").value+" [#{state} #{portid} (#{service})]"
           finding.overview = port.css("/script").attr("output").value
@@ -58,39 +59,8 @@ class Nmap
         end
 
       end
-
-
-
-
-      # check if findings done, otherwise one finding per 'host'
-
-=begin    
-        if (itemnode["port"].to_s != "0" && itemnode["severity"] >= threshold)
-
-          # create a temporary finding object
-          finding = Finding.new()
-          finding.title = itemnode['pluginName'].to_s()
-          finding.overview = itemnode.css("description").to_s()
-          finding.remediation = itemnode.css("solution").to_s()
-
-          # can this be inherited from an import properly?
-          finding.type = "Imported"
-          finding.risk = itemnode["severity"]
-          finding.affected_hosts = hostnode["name"]
-          if itemnode.css("plugin_output")
-            finding.notes = hostnode["name"]+" ("+itemnode["protocol"]+ " port " + itemnode["port"]+"):"+itemnode.css("plugin_output").to_s()
-          end
-
-          finding.references = itemnode.css("see_also").to_s
-          finding.id = itemnode['pluginID'].to_s()
-
-          vulns[host] << finding.to_hash
-          items << itemnode['pluginID'].to_s()
-        end
-=end
       end
 
-#      vulns[host] = findings
       items = []
     end
 
