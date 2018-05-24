@@ -1,6 +1,6 @@
 # odle 
 
-odle is a Ruby gem and binary that takes various XML data from security tools and outputs their JSON equivalent. The goal is to be (1) simple, (2) fast, and (3) work on many platforms with only one dependency -- nokogiri. 
+odle is a Ruby gem and binary that takes XML data from various security tools and outputs their JSON equivalent. The goal is to be (1) simple, (2) fast, and (3) work on many platforms with only one dependency -- nokogiri. 
 
 ![Example Usage](https://i.imgur.com/rhHBwew.gif)
 
@@ -13,7 +13,7 @@ gem install odle
 ```
 
 # Example Usage
-There are lots of examples on this page (link), but here are two simple examples.
+There are more examples on the [wiki](https://github.com/BuffaloWill/odle/wiki), but here are two simple examples.
 
 ## CLI
 
