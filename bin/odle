@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require 'odle'
 
 # data flags are required
@@ -22,6 +21,8 @@ end
 
 if type.downcase == "burp"
 	puts Burp.new().parse(ARGF.read,"0")
+elsif type.downcase == "burp2"
+	puts Burp2.new().parse(ARGF.read,"0")
 elsif type.downcase == "nessus"
 	puts Nessus.new().parse(ARGF.read,"0")
 elsif type.downcase == "msf"

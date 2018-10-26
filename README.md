@@ -35,9 +35,10 @@ Odle takes in data (mostly XML) and outputs a JSON hash coordinated by hosts. Ea
 
 # Supported Inputs
 
-| Name          			| Version(s)    |
-| ------------- 			| ------------- |
-| Metasploit XML Export     | v5 			|
-| BurpSuite XML Export      | Unknown 		|
-| Nessus        			| v2 			|
-| Nmap 	        			| Unknown		|
+| Name          			| Version(s)    | Tested On    |
+| ------------- 			| ------------- |------------- |
+| Metasploit XML Export     | v5 			|			   |
+| BurpSuite XML Export      | v1.*			|			   |
+| BurpSuite 2.0 XML Export  | v2.0.* 	 	| 2.0.7		   |
+| Nessus        			| v2 			|			   |
+| Nmap 	        			| Unknown		|			   |
