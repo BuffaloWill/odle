@@ -1,11 +1,15 @@
 #!/usr/bin/env ruby
 require 'odle'
 
+def list_types()
+	return ["","--burp","--burp2","--nessus","--msf","--nmap"].join("\n")
+end
+
 # data flags are required
 flags = ARGV.shift
 
 unless flags 
-	puts "[!] A data type is required e.g.\n odle --burp \n\n Available types:"#+list_types()
+	puts "[!] A data type is required e.g.\n cat MYDATA_FILE | odle --burp \n\n Available types:"+list_types()
 	exit(0)
 end
 
@@ -30,5 +34,5 @@ elsif type.downcase == "msf"
 elsif type.downcase == "nmap"
 	puts Nmap.new().parse(ARGF.read,"0")
 else
-	puts "[!] Unknown data type \n\n Available types:"#+list_types()
+	puts "[!] Unknown data type \n\n Available types:"+list_types()
 end
